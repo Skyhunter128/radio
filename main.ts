@@ -1,15 +1,18 @@
-input.onButtonPressed(Button.A, function () {
+input.onButtonPressed(Button.A, function on_button_pressed_a() {
+    
     couleur = 1
 })
-input.onButtonPressed(Button.AB, function () {
+input.onButtonPressed(Button.AB, function on_button_pressed_ab() {
     if (envoi == 0) {
         envoie_ordre()
     } else {
         basic.showIcon(IconNames.Heart)
         basic.showString("erreur babazicool")
     }
+    
 })
-function envoie_ordre () {
+function envoie_ordre() {
+    
     basic.showLeds(`
         . . # . .
         . # # # .
@@ -28,9 +31,12 @@ function envoie_ordre () {
     } else {
         basic.showString("echec envoie")
     }
+    
     basic.showIcon(IconNames.Yes)
 }
-input.onButtonPressed(Button.B, function () {
+
+input.onButtonPressed(Button.B, function on_button_pressed_b() {
+    
     couleur = 2
 })
 let couleur = 0
@@ -61,3 +67,4 @@ if (1 == couleur) {
         basic.showString("error grok")
     }
 }
+
