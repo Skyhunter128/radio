@@ -1,6 +1,3 @@
-input.onPinPressed(TouchPin.P0, function () {
-    envoie_ordre()
-})
 input.onButtonPressed(Button.A, function () {
     couleur = 2
 })
@@ -23,7 +20,7 @@ function envoie_ordre () {
         radio.sendString("grok_jaune")
         basic.showString("jaune")
     } else {
-        basic.showString("echec envoie")
+        basic.showString("2")
     }
     basic.showIcon(IconNames.Yes)
 }
@@ -58,3 +55,13 @@ if (1 == couleur) {
         basic.showString("error grok")
     }
 }
+loops.everyInterval(1000, function () {
+    if (pins.digitalReadPin(DigitalPin.P0) >= 1) {
+        envoie_ordre()
+        basic.showIcon(IconNames.Heart)
+        basic.pause(2000)
+        basic.clearScreen()
+    } else {
+    	
+    }
+})
