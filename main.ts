@@ -55,7 +55,7 @@ if (1 == couleur) {
         basic.showString("error grok")
     }
 }
-loops.everyInterval(1000, function () {
+loops.everyInterval(100, function () {
     if (pins.digitalReadPin(DigitalPin.P0) >= 1) {
         envoie_ordre()
         basic.showIcon(IconNames.Heart)
